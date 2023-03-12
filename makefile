@@ -25,17 +25,17 @@ default: $(GAME)
 #target: dependencies
 
 $(GAME): $(OFILE) $(CRTOUT) $(CFG)
-	$(LD65) -C $(CFG) -o $(GAME) $(CRTOUT) $(OFILE) nes.lib -Ln labels.txt --dbgfile dbg.txt
+	ld65 -C $(CFG) -o $(GAME) $(CRTOUT) $(OFILE) nes.lib -Ln debug/labels.txt --dbgfile debug/dbg.txt
 	@echo $(GAME) created
 
 $(CRTOUT): $(CRTIN) $(ALPHA)
-	$(CA65) $(CRTIN) -o $(CRTOUT)
+	ca65 $(CRTIN) -o $(CRTOUT)
 
 $(OFILE): $(SFILE)
-	$(CA65) $(SFILE) -o $(OFILE) -g
+	ca65 $(SFILE) -o $(OFILE) -g
 
 $(SFILE): $(SRC)
-	$(CC65) -Oirs $(SRC) --add-source -o $(SFILE)
+	cc65 -Oirs $(SRC) --add-source -o $(SFILE)
 
 clean:
-	rm $(GAME) dist/*.o
+	rm dist/*
