@@ -6,7 +6,7 @@ CC65 = ../bin/cc65
 CA65 = ../bin/ca65
 LD65 = ../bin/ld65
 NAME = snake
-CFG = nrom_32k_vert.cfg
+CFG = config/nrom_32k_vert.cfg
 
 
 .PHONY: default clean
