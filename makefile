@@ -5,7 +5,7 @@
 CC65 = ../bin/cc65
 CA65 = ../bin/ca65
 LD65 = ../bin/ld65
-NAME = hello
+NAME = snake
 CFG = nrom_32k_vert.cfg
 
 
